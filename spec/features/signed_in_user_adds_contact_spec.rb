@@ -7,7 +7,6 @@ feature 'User adds a contact' do
     fill_in 'Name', with: 'Nick'
     fill_in 'Frequency', with: 7
     click_on 'Add'
-    # assert the name is on page
     expect(page).to have_content('Nick')
     expect(page).to have_content(7)
   end
@@ -17,6 +16,6 @@ feature 'User adds a contact' do
     visit sign_in_path
     fill_in 'Email', with: user.email
     fill_in 'Password', with: user.password
-    click_on 'Sign in'
+    click_button 'Sign in'
   end
 end
