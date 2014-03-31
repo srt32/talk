@@ -1,5 +1,5 @@
 Talk::Application.routes.draw do
 
-  root to: "dashboard#show"
+  root to: "dashboards#show"
 
 end
