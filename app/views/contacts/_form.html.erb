@@ -1,4 +1,13 @@
 <%= form_for @contact, method: :post, url: user_contacts_path(current_user) do |form| %>
+  <% if @contact.errors.any? %>
+    <h2>Whoops</h2>
+    <ul>
+      <% @contact.errors.full_messages.each do |message| %>
+        <li><%= message %>
+      <% end %>
+    </ul>
+  <% end %>
+
   <%= form.label :name, 'Name' %>
   <%= form.text_field :name %>
 

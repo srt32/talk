@@ -1,12 +1,12 @@
 class ContactsController < ApplicationController
 
   def create
-    contact = current_user.contacts.new(contact_params)
-    if contact.save
+    @contact = current_user.contacts.new(contact_params)
+    if @contact.save
+      flash[:notice] = "Yah! We've added #{@contact.name}."
       redirect_to root_path
     else
-      flash[:error] = "We couldn't save your contact. Sorry"
-      redirect_to root_path
+      render "dashboards/show"
     end
   end
 
