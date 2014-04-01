@@ -3,7 +3,6 @@ require 'spec_helper'
 feature 'User adds a contact' do
 
   scenario 'with valid name and frequency' do
-    pending
     sign_in
     visit root_path
     fill_in 'Name', with: 'Nick'

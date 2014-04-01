@@ -1,0 +1,9 @@
+<%= form_for @contact, method: :post, url: user_contacts_path(current_user) do |form| %>
+  <%= form.label :name, 'Name' %>
+  <%= form.text_field :name %>
+
+  <%= form.label :frequency, 'Frequency' %>
+  <%= form.text_field :frequency %>
+
+  <%= form.submit 'Add' %>
+<% end %>
