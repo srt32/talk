@@ -12,4 +12,14 @@ feature 'User adds a contact' do
     expect(page).to have_content(7)
   end
 
+  scenario 'with invalid frequency' do
+    pending
+    sign_in
+    visit root_path
+    fill_in 'Name', with: 'Nick'
+    fill_in 'Frequency', with: 0
+    click_on 'Add'
+    expect(page).to have_content('Error')
+  end
+
 end
