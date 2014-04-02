@@ -6,4 +6,8 @@ Talk::Application.routes.draw do
     resources :contacts, only: [:create]
   end
 
+  resources :contacts, only: [] do
+    resources :conversations, only: [:create]
+  end
+
 end

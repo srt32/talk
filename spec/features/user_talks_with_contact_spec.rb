@@ -7,10 +7,10 @@ feature 'User has a conversation' do
     create_new_contact_for(user)
 
     visit root_path
-    within 'record-conversation' do
+    within '.record-conversation' do
       click_on 'We spoke today'
     end
-    within ' ' do
+    within '.contact' do
       expect(page).to have_content('Today')
     end
   end

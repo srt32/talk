@@ -1,2 +1,6 @@
-<li class='contact-name'><%= contact.name %></li>
-<li class='contact-frequency'><%= contact.frequency %></li>
+<span class='contact'>
+  <li class='contact-name'><%= contact.name %></li>
+  <li class='contact-frequency'><%= contact.frequency %></li>
+</span>
+
+<%= render 'contacts/record_conversation.html.erb', contact: contact %>

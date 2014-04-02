@@ -7,5 +7,6 @@ class Contact < ActiveRecord::Base
   validates :name, uniqueness: { scope: :user_id }
   validates :user_id, presence: true
 
+  has_many :conversations
   belongs_to :user
 end
