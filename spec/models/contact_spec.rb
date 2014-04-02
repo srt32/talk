@@ -12,7 +12,7 @@ describe Contact do
   it { should have_many(:conversations) }
 
   describe "#last_conversation_days_ago" do
-    it "should return the datetime of the most recent conversation" do
+    it "should return number of days ago as 0 for recent conversation" do
       contact = create(:contact)
       old_conversation = create(:conversation,
                                 contact: contact,
@@ -20,6 +20,17 @@ describe Contact do
       recent_conversation = create(:conversation,
                                    contact: contact)
       expect(contact.last_conversation_days_ago).to eq(0)
+    end
+
+    it "should return number of days ago as >0 for old conversation" do
+      contact = create(:contact)
+      old_conversation = create(:conversation,
+                                contact: contact,
+                                created_at: 10.days.ago)
+      recent_conversation = create(:conversation,
+                                   contact: contact,
+                                   created_at: 5.days.ago)
+      expect(contact.last_conversation_days_ago).to eq(5)
     end
   end
 end
