@@ -11,7 +11,13 @@
   <%= form.text_field :name %>
 
   <%= form.label :frequency, 'Frequency' %>
-  <%= select_tag("contact[frequency]", options_for_select([['Daily', 1],['Weekly', 7]])) %>
+  <%= select_tag("contact[frequency]",
+                 options_for_select([
+                                      ['Daily', 1],
+                                      ['Weekly', 7],
+                                      ['Monthly', 30],
+                                      ['Annually', 365]
+                                    ])) %>
 
   <%= form.submit 'Add' %>
 <% end %>
