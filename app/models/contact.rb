@@ -10,7 +10,18 @@ class Contact < ActiveRecord::Base
   has_many :conversations
   belongs_to :user
 
+  def last_conversation_at
+    last_conversation.created_at
+  end
+
+  private
+
   def last_conversation
-    conversations.order("created_at DESC").limit(1).first
+    conversations.order("created_at DESC").limit(1).first || NoConversation.new
+  end
+end
+
+class NoConversation
+  def created_at
   end
 end
