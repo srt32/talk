@@ -9,4 +9,8 @@ class Contact < ActiveRecord::Base
 
   has_many :conversations
   belongs_to :user
+
+  def last_conversation
+    conversations.order("created_at DESC").limit(1).first
+  end
 end
