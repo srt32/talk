@@ -6,4 +6,6 @@ class Contact < ActiveRecord::Base
   validates :name, presence: true
   validates :name, uniqueness: { scope: :user_id }
   validates :user_id, presence: true
+
+  belongs_to :user
 end
