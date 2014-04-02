@@ -19,4 +19,8 @@ FactoryGirl.define do
     frequency 7
   end
 
+  factory :conversation do
+    contact
+  end
+
 end
