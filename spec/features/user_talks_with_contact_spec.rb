@@ -11,7 +11,7 @@ feature 'User has a conversation' do
       click_on 'We spoke today'
     end
     within '.contact' do
-      expect(page).to have_content('0 days')
+      expect(page).to have_content('0 days ago')
     end
   end
 

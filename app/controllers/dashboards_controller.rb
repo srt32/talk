@@ -1,4 +1,5 @@
 class DashboardsController < ApplicationController
+  before_filter :authorize
 
   def show
     @contact = Contact.new

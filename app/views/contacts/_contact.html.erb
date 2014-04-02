@@ -2,7 +2,7 @@
   <li class='contact-name'><%= contact.name %></li>
   <li class='contact-frequency'><%= contact.frequency %></li>
   <li class='contact-last-conversation'>
-    <%= time_ago_in_words(contact.last_conversation_at) %>
+    <%= "#{contact.last_conversation_days_ago} days ago" %>
   </li>
 </span>
 

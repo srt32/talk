@@ -11,7 +11,7 @@ describe Contact do
   it { should belong_to(:user) }
   it { should have_many(:conversations) }
 
-  describe "#last_conversation_at" do
+  describe "#last_conversation_days_ago" do
     it "should return the datetime of the most recent conversation" do
       contact = create(:contact)
       old_conversation = create(:conversation,
@@ -19,7 +19,7 @@ describe Contact do
                                 created_at: 10.days.ago)
       recent_conversation = create(:conversation,
                                    contact: contact)
-      expect(contact.last_conversation_at.utc.to_s).to eq(recent_conversation.created_at.utc.to_s)
+      expect(contact.last_conversation_days_ago).to eq(0)
     end
   end
 end

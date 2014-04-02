@@ -10,8 +10,14 @@ class Contact < ActiveRecord::Base
   has_many :conversations
   belongs_to :user
 
-  def last_conversation_at
-    last_conversation.created_at
+  def last_conversation_days_ago
+    unless last_conversation.created_at == 0
+      seconds = Time.now.utc - last_conversation.created_at.utc
+      days = seconds / (60 * 60 * 24)
+      days.round
+    else
+      0
+    end
   end
 
   private
@@ -23,5 +29,6 @@ end
 
 class NoConversation
   def created_at
+    Time.now
   end
 end
