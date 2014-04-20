@@ -20,6 +20,10 @@ class Contact < ActiveRecord::Base
     end
   end
 
+  def goal_percentage
+    100 - ((last_conversation_days_ago.to_f / frequency) * 100).round
+  end
+
   private
 
   def last_conversation

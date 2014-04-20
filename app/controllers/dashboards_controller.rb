@@ -3,7 +3,7 @@ class DashboardsController < ApplicationController
 
   def show
     @contact = Contact.new
-    @contacts = current_user.contacts
+    @contacts = current_user.contacts.sort_by(&:goal_percentage)
   end
 
 end

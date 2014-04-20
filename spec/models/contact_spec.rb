@@ -34,3 +34,18 @@ describe Contact do
     end
   end
 end
+
+describe Contact, '#goal_percentage' do
+  it 'should return percentage of frequency since last conversation' do
+    contact = create(:contact, frequency: 30)
+    conversation = create(
+      :conversation,
+      contact: contact,
+      created_at: 15.days.ago
+    )
+
+    percentage = contact.goal_percentage
+
+    expect(percentage).to eq 50
+  end
+end
