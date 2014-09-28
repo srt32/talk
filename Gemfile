@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '2.0.0'
 
 gem 'airbrake'
+gem 'bitters'
 gem 'bourbon'
 gem 'clearance'
 gem 'coffee-rails'
