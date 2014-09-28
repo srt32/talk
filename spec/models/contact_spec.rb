@@ -38,7 +38,7 @@ end
 describe Contact, '#goal_percentage' do
   it 'should return percentage of frequency since last conversation' do
     contact = create(:contact, frequency: 30)
-    conversation = create(
+    create(
       :conversation,
       contact: contact,
       created_at: 15.days.ago

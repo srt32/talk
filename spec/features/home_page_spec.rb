@@ -15,7 +15,7 @@ feature 'On the homepage' do
   scenario 'shows percentage by contact' do
     user = create_and_sign_in
     contact = create(:contact, user: user, frequency: 30)
-    conversation = create(
+    create(
       :conversation,
       contact: contact,
       created_at: 15.days.ago

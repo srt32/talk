@@ -9,11 +9,11 @@ require 'rspec/rails'
 require 'webmock/rspec'
 require 'clearance/rspec'
 
-Dir[Rails.root.join('spec/support/**/*.rb')].each { |file| require file }
-
 module Features
   # Extend this module in spec/support/features/*.rb
 end
+
+Dir[Rails.root.join('spec/support/**/*.rb')].each { |file| require file }
 
 RSpec.configure do |config|
   config.expect_with :rspec do |c|
@@ -21,6 +21,8 @@ RSpec.configure do |config|
   end
 
   config.include Features, type: :feature
+  config.include Features::SessionHelpers, type: :feature
+  config.include Features::ContactHelpers, type: :feature
   config.infer_base_class_for_anonymous_controllers = false
   config.order = 'random'
   config.use_transactional_fixtures = false
