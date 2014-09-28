@@ -10,4 +10,10 @@ Talk::Application.routes.draw do
     resources :conversations, only: [:create]
   end
 
+  namespace :api do
+    namespace :v1 do
+      resources :contacts, only: [:index]
+    end
+  end
+
 end

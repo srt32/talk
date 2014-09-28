@@ -1,8 +1,10 @@
 require 'spec_helper'
+require 'clearance/rspec'
 
 describe DashboardsController do
   describe 'GET show' do
     it 'assigns @contacts in percentage order ASC' do
+      pending
       user = create(:user)
       sign_in_as(user)
       old_contact = create(
