@@ -15,7 +15,7 @@ gem 'jquery-rails'
 gem 'neat'
 gem 'pg'
 gem 'rack-timeout'
-gem 'rails', '>= 4.0.3'
+gem 'rails', '>= 4.1.6'
 gem 'recipient_interceptor'
 gem 'sass-rails', '~> 4.0.0'
 gem 'simple_form'
@@ -35,7 +35,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'factory_girl_rails'
   gem 'pry-rails'
-  gem 'rspec-rails', '>= 2.14'
+  gem 'rspec-rails', '~> 2.0'
 end
 
 group :test do

@@ -23,6 +23,7 @@ RSpec.configure do |config|
   config.include Features, type: :feature
   config.include Features::SessionHelpers, type: :feature
   config.include Features::ContactHelpers, type: :feature
+  config.include Clearance::Testing::Helpers, type: :controller
   config.infer_base_class_for_anonymous_controllers = false
   config.order = 'random'
   config.use_transactional_fixtures = false

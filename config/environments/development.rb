@@ -1,3 +1,5 @@
+Mail.register_interceptor RecipientInterceptor.new(ENV['EMAIL_RECIPIENTS'])
+
 Talk::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -30,6 +32,6 @@ Talk::Application.configure do
   # a parameter is not explcitly permitted but is passed anyway.
   config.action_controller.action_on_unpermitted_parameters = :raise
 
-
   config.action_mailer.default_url_options = { :host => 'localhost:5000' }
+  config.action_mailer.preview_path = "#{Rails.root}/spec/mailers/previews"
 end
