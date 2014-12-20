@@ -8,7 +8,7 @@ class Contact < ActiveRecord::Base
   validates :user_id, presence: true
 
   has_many :conversations
-  belongs_to :user
+  belongs_to :user                  
 
   def last_conversation_days_ago
     unless last_conversation.created_at == 0
